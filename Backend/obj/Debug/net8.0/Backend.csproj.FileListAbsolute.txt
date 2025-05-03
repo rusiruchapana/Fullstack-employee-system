@@ -104,3 +104,5 @@ D:\Github projects\Employee-Management-System\Backend\bin\Debug\net8.0\tr\Micros
 D:\Github projects\Employee-Management-System\Backend\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Github projects\Employee-Management-System\Backend\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Github projects\Employee-Management-System\Backend\obj\Debug\net8.0\Backend.sourcelink.json
+D:\Github projects\Employee-Management-System\Backend\bin\Debug\net8.0\AutoMapper.dll
+D:\Github projects\Employee-Management-System\Backend\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

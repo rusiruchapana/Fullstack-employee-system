@@ -1,16 +1,21 @@
 using Backend.Data;
+using Backend.Map;
 using Backend.Repositories;
 using Backend.Repositories.Impl;
 using Backend.Services;
 using Backend.Services.Impl;
 using Microsoft.EntityFrameworkCore;
 
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 // Add services to the container.
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"), 
         ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))));
+
 
 
 // Add services to the container.
