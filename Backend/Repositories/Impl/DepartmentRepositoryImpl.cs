@@ -1,6 +1,6 @@
 namespace Backend.Repositories.Impl;
 
-public class DepartmentRepositoryImpl
+public class DepartmentRepositoryImpl: IDepartmentRepository
 {
     
 }
