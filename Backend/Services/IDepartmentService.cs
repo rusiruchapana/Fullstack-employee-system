@@ -6,4 +6,5 @@ namespace Backend.Services;
 public interface IDepartmentService
 {
     Task<DepartmentResponseDto> AddDepartment(DepartmentRequestDto departmentRequestDto);
+    Task<ICollection<DepartmentResponseDto>> GetAllDepartments();
 }

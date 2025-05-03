@@ -21,4 +21,10 @@ public class DepartmentServiceImpl: IDepartmentService
         Department department = await _departmentRepository.AddDepartment(_mapper.Map<Department>(departmentRequestDto));
         return _mapper.Map<DepartmentResponseDto>(department);
     }
+
+    public async Task<ICollection<DepartmentResponseDto>> GetAllDepartments()
+    {
+        ICollection<Department> departments = await _departmentRepository.GetAllDepartments();
+        return _mapper.Map<ICollection<DepartmentResponseDto>>(departments);
+    }
 }

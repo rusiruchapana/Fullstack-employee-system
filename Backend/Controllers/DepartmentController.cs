@@ -22,4 +22,17 @@ public class DepartmentController: ControllerBase
         return Ok(departmentResponseDto);
     }
 
+    [HttpGet]
+    public async Task<ActionResult<ICollection<DepartmentResponseDto>>> GetAllDepartments()
+    {
+        ICollection<DepartmentResponseDto> departmentResponseDtos = await _departmentService.GetAllDepartments();
+        if(departmentResponseDtos == null)
+            return NotFound();
+        return Ok(departmentResponseDtos);
+    }
+
+    
+    
+    
+    
 }

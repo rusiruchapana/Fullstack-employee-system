@@ -1,5 +1,6 @@
 using Backend.Data;
 using Backend.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Repositories.Impl;
 
@@ -16,5 +17,11 @@ public class DepartmentRepositoryImpl: IDepartmentRepository
         _dbContext.AddAsync(department);
         await _dbContext.SaveChangesAsync();
         return department;
+    }
+
+    public async Task<ICollection<Department>> GetAllDepartments()
+    {
+        ICollection<Department> departments = await _dbContext.Departments.ToListAsync();
+        return departments;
     }
 }
