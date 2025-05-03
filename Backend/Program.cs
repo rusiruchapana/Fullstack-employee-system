@@ -1,4 +1,8 @@
 using Backend.Data;
+using Backend.Repositories;
+using Backend.Repositories.Impl;
+using Backend.Services;
+using Backend.Services.Impl;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +18,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddControllers();
+builder.Services.AddScoped<IDepartmentService , DepartmentServiceImpl>();
+builder.Services.AddScoped<IDepartmentRepository , DepartmentRepositoryImpl>();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -24,5 +33,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.MapControllers();
 app.Run();
 
