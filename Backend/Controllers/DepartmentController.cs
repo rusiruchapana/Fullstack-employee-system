@@ -26,8 +26,8 @@ public class DepartmentController: ControllerBase
     public async Task<ActionResult<ICollection<DepartmentResponseDto>>> GetAllDepartments()
     {
         ICollection<DepartmentResponseDto> departmentResponseDtos = await _departmentService.GetAllDepartments();
-        if(departmentResponseDtos == null)
-            return NotFound();
+        if (departmentResponseDtos == null)
+            return NoContent();
         return Ok(departmentResponseDtos);
     }
 
