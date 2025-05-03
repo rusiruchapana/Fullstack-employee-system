@@ -1,6 +1,6 @@
 namespace Backend.Services.Impl;
 
-public class DepartmentServiceImpl
+public class DepartmentServiceImpl: IDepartmentService
 {
     
 }
