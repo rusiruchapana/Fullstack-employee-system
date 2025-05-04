@@ -1,6 +1,6 @@
 namespace Backend.Services.Impl;
 
-public class EmployeeServiceImpl
+public class EmployeeServiceImpl: IEmployeeService
 {
     
 }
