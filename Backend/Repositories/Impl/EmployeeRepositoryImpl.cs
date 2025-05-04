@@ -26,10 +26,10 @@ public class EmployeeRepositoryImpl: IEmployeeRepository
         return employees;
     }
 
-    public async Task<Department> GetDepartmentById(int id)
+    public async Task<Employee> GetEmployeeByID(int id)
     {
-        Department department = await _dbContext.Departments.FindAsync(id);
-        return department;
+        Employee employee = await _dbContext.Employees.FindAsync(id);
+        return employee;
     }
 
     public async Task<bool> DeleteEmployee(int id)
@@ -41,7 +41,8 @@ public class EmployeeRepositoryImpl: IEmployeeRepository
             await _dbContext.SaveChangesAsync();
             return true;
         }
-
         return false;
     }
+
+    
 }

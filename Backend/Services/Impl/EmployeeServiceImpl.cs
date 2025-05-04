@@ -30,10 +30,10 @@ public class EmployeeServiceImpl: IEmployeeService
         return (_mapper.Map<ICollection<EmployeeResponseDto>>(employees));
     }
 
-    public async Task<DepartmentResponseDto> GetDepartmentById(int id)
+    public async Task<EmployeeResponseDto> GetEmployeeByID(int id)
     {
-        Department department = await _employeeRepository.GetDepartmentById(id);
-        return _mapper.Map<DepartmentResponseDto>(department);
+        Employee employee = await _employeeRepository.GetEmployeeByID(id);
+        return _mapper.Map<EmployeeResponseDto>(employee);
     }
 
     public async Task<bool> DeleteEmployee(int id)
@@ -41,4 +41,6 @@ public class EmployeeServiceImpl: IEmployeeService
         bool isDeleted = await _employeeRepository.DeleteEmployee(id);
         return isDeleted;
     }
+
+    
 }

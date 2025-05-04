@@ -36,11 +36,11 @@ public class EmployeeController: ControllerBase
     }
     
     [HttpGet("{id}")]
-    public async Task<ActionResult<DepartmentResponseDto>> GetDepartmentById(int id)
+    public async Task<ActionResult<EmployeeResponseDto>> GetEmployeeByID(int id)
     {
-        DepartmentResponseDto departmentResponseDto = await _employeeService.GetDepartmentById(id);
-        if(departmentResponseDto != null)
-            return Ok(departmentResponseDto);
+        EmployeeResponseDto employeeResponseDto = await _employeeService.GetEmployeeByID(id);
+        if(employeeResponseDto != null)
+            return Ok(employeeResponseDto);
         return NoContent();
     }
 
