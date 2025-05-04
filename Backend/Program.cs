@@ -26,6 +26,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 builder.Services.AddScoped<IDepartmentService , DepartmentServiceImpl>();
 builder.Services.AddScoped<IDepartmentRepository , DepartmentRepositoryImpl>();
+builder.Services.AddScoped<IEmployeeService , EmployeeServiceImpl>();
+builder.Services.AddScoped<IEmployeeRepository , EmployeeRepositoryImpl>();
+
 
 
 var app = builder.Build();
