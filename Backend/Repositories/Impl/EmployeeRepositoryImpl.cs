@@ -38,11 +38,16 @@ public class EmployeeRepositoryImpl: IEmployeeRepository
         if (employee != null)
         {
             _dbContext.Employees.Remove(employee);
-            await _dbContext.SaveChangesAsync();
+          
+        }  await _dbContext.SaveChangesAsync();
             return true;
-        }
         return false;
     }
 
-    
+    public async Task<Employee> UpdateEmployee(Employee beforeUpdate)
+    {
+        _dbContext.Employees.Update(beforeUpdate);
+        await _dbContext.SaveChangesAsync();
+        return beforeUpdate;
+    }
 }

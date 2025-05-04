@@ -8,5 +8,6 @@ public interface IEmployeeRepository
     Task<ICollection<Employee>> GetAllEmployees();
     Task<Employee> GetEmployeeByID(int id);
     Task<bool> DeleteEmployee(int id);
-    
+
+    Task<Employee> UpdateEmployee(Employee beforeUpdate);
 }

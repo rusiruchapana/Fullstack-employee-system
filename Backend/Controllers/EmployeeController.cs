@@ -53,7 +53,14 @@ public class EmployeeController: ControllerBase
         return "Employee not found.";
     }
 
-
+    [HttpPut("{id}")]
+    public async Task<ActionResult<EmployeeResponseDto>> UpdateEmployee(int id , EmployeeRequestDto employeeRequestDto)
+    {
+        EmployeeResponseDto employeeResponseDto = await _employeeService.UpdateEmployee(id, employeeRequestDto);
+        if(employeeResponseDto != null)
+            return Ok(employeeResponseDto);
+        return NoContent();
+    }
 
 
 }

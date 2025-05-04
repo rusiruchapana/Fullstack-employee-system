@@ -9,5 +9,6 @@ public interface IEmployeeService
     Task<ICollection<EmployeeResponseDto>> GetAllEmployees();
     Task<EmployeeResponseDto> GetEmployeeByID(int id);
     Task<bool> DeleteEmployee(int id);
-    
+
+    Task<EmployeeResponseDto> UpdateEmployee(int id, EmployeeRequestDto employeeRequestDto);
 }

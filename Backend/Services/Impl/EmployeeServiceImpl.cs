@@ -42,5 +42,19 @@ public class EmployeeServiceImpl: IEmployeeService
         return isDeleted;
     }
 
-    
+    public async Task<EmployeeResponseDto> UpdateEmployee(int id, EmployeeRequestDto employeeRequestDto)
+    {
+        Employee beforeUpdate = await _employeeRepository.GetEmployeeByID(id);
+        beforeUpdate.FirstName = employeeRequestDto.FirstName;
+        beforeUpdate.LastName = employeeRequestDto.LastName;
+        beforeUpdate.Email = employeeRequestDto.Email;
+        beforeUpdate.DateOfBirth = employeeRequestDto.DateOfBirth;
+        beforeUpdate.HireDate = employeeRequestDto.HireDate;
+        beforeUpdate.Position = employeeRequestDto.Position;
+        beforeUpdate.Salary = employeeRequestDto.Salary;
+        beforeUpdate.DepartmentId = employeeRequestDto.DepartmentId;
+
+        Employee afterUpdate = await _employeeRepository.UpdateEmployee(beforeUpdate);
+        return(_mapper.Map<EmployeeResponseDto>(afterUpdate));
+    }
 }
