@@ -1,6 +1,6 @@
 namespace Backend.Repositories.Impl;
 
-public class EmployeeRepositoryImpl
+public class EmployeeRepositoryImpl: IEmployeeRepository
 {
     
 }
