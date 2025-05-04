@@ -1,8 +1,11 @@
 using Backend.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Backend.Controllers;
 
-public class EmployeeController
+[ApiController]
+[Route("/api/[controller]")]
+public class EmployeeController: ControllerBase
 {
     private readonly IEmployeeService _employeeService;
 
@@ -10,5 +13,7 @@ public class EmployeeController
     {
         _employeeService = employeeService;
     }
+    
+    
 
 }
