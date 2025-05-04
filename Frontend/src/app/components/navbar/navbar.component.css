@@ -1,0 +1,136 @@
+/* Base styles */
+:root {
+    --primary-color: #3498db;
+    --primary-dark: #2980b9;
+    --text-light: #ffffff;
+    --text-dark: #2c3e50;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+  
+  .navbar {
+    background-color: var(--primary-color);
+    box-shadow: var(--shadow);
+    padding: 0.8rem 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  /* Brand styles */
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: var(--transition);
+  }
+  
+  .brand-icon {
+    margin-right: 0.5rem;
+    font-size: 1.8rem;
+  }
+  
+  .navbar-brand:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Toggle button */
+  .navbar-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    padding: 0.5rem;
+  }
+  
+  .toggle-icon {
+    color: var(--text-light);
+    font-size: 1.8rem;
+  }
+  
+  /* Menu styles */
+  .navbar-menu {
+    display: flex;
+    flex-grow: 1;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 2rem;
+  }
+  
+  .nav-item {
+    margin: 0 0.5rem;
+  }
+  
+  .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: var(--text-light);
+    border-radius: 4px;
+    transition: var(--transition);
+    font-weight: 500;
+  }
+  
+  .nav-icon {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .nav-link.active {
+    background-color: var(--primary-dark);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .navbar-container {
+      padding: 0 1rem;
+    }
+    
+    .navbar-toggle {
+      display: block;
+    }
+    
+    .navbar-menu {
+      width: 100%;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    
+    .navbar-nav {
+      flex-direction: column;
+      width: 100%;
+      margin-left: 0;
+      padding-top: 1rem;
+    }
+    
+    .nav-item {
+      margin: 0.3rem 0;
+    }
+    
+    .nav-link {
+      padding: 0.8rem;
+    }
+  }
