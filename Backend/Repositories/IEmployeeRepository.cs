@@ -1,6 +1,10 @@
+using Backend.Entities;
+
 namespace Backend.Repositories;
 
 public interface IEmployeeRepository
 {
-    
+    Task<Employee> AddEmployee(Employee employee);
+    Task<ICollection<Employee>> GetAllEmployees();
+    Task<Department> GetDepartmentById(int id);
 }
