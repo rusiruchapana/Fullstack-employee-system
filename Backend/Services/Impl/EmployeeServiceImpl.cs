@@ -35,4 +35,10 @@ public class EmployeeServiceImpl: IEmployeeService
         Department department = await _employeeRepository.GetDepartmentById(id);
         return _mapper.Map<DepartmentResponseDto>(department);
     }
+
+    public async Task<bool> DeleteEmployee(int id)
+    {
+        bool isDeleted = await _employeeRepository.DeleteEmployee(id);
+        return isDeleted;
+    }
 }

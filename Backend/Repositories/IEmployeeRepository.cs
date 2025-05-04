@@ -7,4 +7,5 @@ public interface IEmployeeRepository
     Task<Employee> AddEmployee(Employee employee);
     Task<ICollection<Employee>> GetAllEmployees();
     Task<Department> GetDepartmentById(int id);
+    Task<bool> DeleteEmployee(int id);
 }

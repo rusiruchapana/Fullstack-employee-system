@@ -31,4 +31,17 @@ public class EmployeeRepositoryImpl: IEmployeeRepository
         Department department = await _dbContext.Departments.FindAsync(id);
         return department;
     }
+
+    public async Task<bool> DeleteEmployee(int id)
+    {
+        Employee employee = await _dbContext.Employees.FindAsync(id);
+        if (employee != null)
+        {
+            _dbContext.Employees.Remove(employee);
+            await _dbContext.SaveChangesAsync();
+            return true;
+        }
+
+        return false;
+    }
 }
