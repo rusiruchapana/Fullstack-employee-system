@@ -31,8 +31,32 @@ public class DepartmentController: ControllerBase
         return Ok(departmentResponseDtos);
     }
 
-    
-    
-    
-    
+    [HttpGet("{id}")]
+    public async Task<ActionResult<DepartmentResponseDto>> GetDepartmentById(int id)
+    {
+        DepartmentResponseDto departmentResponseDto = await _departmentService.GetDepartmentById(id);
+        if (departmentResponseDto == null)
+            return NoContent();
+        return Ok(departmentResponseDto);
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<ActionResult<string>> DeleteDepartment(int id)
+    {
+        bool isDeleted = await _departmentService.DeleteDepartment(id);
+        if (isDeleted)
+            return ("Department deleted");
+        return("Department not found");
+    }
+
+    [HttpPut("{id}")]
+    public async Task<ActionResult<DepartmentResponseDto>> UpdateDepartment(int id , DepartmentRequestDto departmentRequestDto)
+    {
+        DepartmentResponseDto departmentResponseDto = await _departmentService.UpdateDepartment(id , departmentRequestDto);
+        if(departmentResponseDto == null)
+            return NoContent();
+        return Ok(departmentResponseDto);
+    }
+
+
 }

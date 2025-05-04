@@ -27,4 +27,26 @@ public class DepartmentServiceImpl: IDepartmentService
         ICollection<Department> departments = await _departmentRepository.GetAllDepartments();
         return _mapper.Map<ICollection<DepartmentResponseDto>>(departments);
     }
+
+    public async Task<DepartmentResponseDto> GetDepartmentById(int id)
+    {
+        Department department = await _departmentRepository.GetDepartmentById(id);
+        return _mapper.Map<DepartmentResponseDto>(department);
+    }
+
+    public async Task<bool> DeleteDepartment(int id)
+    {
+        bool isDeleted = await _departmentRepository.DeleteDepartment(id);
+        return isDeleted;
+    }
+    
+    public async Task<DepartmentResponseDto> UpdateDepartment(int id, DepartmentRequestDto departmentRequestDto)
+    {
+        Department beforeUpdateDpartment = await _departmentRepository.GetDepartmentById(id);
+        beforeUpdateDpartment.Name = departmentRequestDto.Name;
+        beforeUpdateDpartment.Description = departmentRequestDto.Description;
+
+        Department afterUpdateDepartment = await _departmentRepository.UpdateDepartment(beforeUpdateDpartment);
+        return(_mapper.Map<DepartmentResponseDto>(afterUpdateDepartment));
+    }
 }
