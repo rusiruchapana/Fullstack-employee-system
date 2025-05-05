@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  standalone: true,
+  imports: [RouterModule, NgbCollapseModule],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-
+  isMenuCollapsed: boolean = true;
 }
