@@ -21,20 +21,16 @@
           </tr>
         </thead>
         <tbody>
-          <!-- <tr *ngFor="let employee of employees"> -->
-          <tr>
-            <!-- <td>{{ employee.employeeId }}</td> -->
-            <td>Employee id</td>
-            <!-- <td class="employee-name">{{ employee.firstName }} {{ employee.lastName }}</td> -->
-            <td class="employee-name">Firstname Lastname</td>
-            <!-- <td class="employee-email">{{ employee.email }}</td> -->
-            <td class="employee-email">Employee email</td>
-            <!-- <td>{{ employee.position }}</td> -->
-            <td>Employee position</td>
+          
+          <tr *ngFor="let employee of employees" >
+            <td>{{employee.employeeId}}</td>
+            <td class="employee-name">{{employee.firstName}} {{employee.lastName}}</td>
+            <td class="employee-email">{{employee.email}}</td>
+            <td>{{employee.position}}</td>
             <!-- <td>{{ employee.department?.name }}</td> -->
             <td>Employee department name</td>
             <!-- <td class="employee-salary">${{ employee.salary | number }}</td> -->
-            <td class="employee-salary">Employee salary</td>
+            <td class="employee-salary">{{employee.salary}}</td>
             <td class="employee-actions">
               <!-- <button class="edit-btn" (click)="openEmployeeForm(employee)">
                 Edit
@@ -50,10 +46,7 @@
               </button>
             </td>
           </tr>
-          <!-- <tr *ngIf="employees.length === 0">
-            <td colspan="7" class="no-employees">No employees found</td>
-          </tr> -->
-          <tr>
+          <tr *ngIf="employees.length === 0">
             <td colspan="7" class="no-employees">No employees found</td>
           </tr>
         </tbody>
